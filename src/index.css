@@ -1,0 +1,68 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --cream-bg: #FAF7F0;
+    --cream-card: #FFFFFF;
+    --cream-border: #E8E2D5;
+    --forest-text: #193826;
+    --forest-dark: #0F2418;
+    --forest-light: #2D5A40;
+    --moss: #4A7A5B;
+    --terracotta: #D46944;
+    --sand: #F3ECE1;
+  }
+
+  body {
+    background-color: var(--cream-bg);
+    color: var(--forest-text);
+    font-family: -apple-system, BlinkMacSystemFont, "Plus Jakarta Sans", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, .font-serif-title {
+    font-family: "Fraunces", "Playfair Display", Georgia, serif;
+    letter-spacing: -0.02em;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #FAF7F0;
+}
+::-webkit-scrollbar-thumb {
+  background: #D8D0C2;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #AFA695;
+}
+
+/* Shimmer animation for loading states */
+@keyframes pulse-subtle {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.65; }
+}
+
+.animate-pulse-subtle {
+  animation: pulse-subtle 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Celebration bounce */
+@keyframes pop-in {
+  0% { transform: scale(0.92); opacity: 0; }
+  70% { transform: scale(1.03); opacity: 1; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.animate-pop-in {
+  animation: pop-in 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
